@@ -20,7 +20,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     PhoneInputComponent,
     EmailInputComponent,
     PasswordInputComponent,
-    SmscodeInputComponent
+    SmscodeInputComponent,
   ],
   imports: [
     BrowserModule,

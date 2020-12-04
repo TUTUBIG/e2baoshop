@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 
-const passwordMatchValidator: ValidatorFn = (compare1: FormControl, compare2: FormControl): ValidationErrors | null => {
-  if compare1.value === compare2.value
+const passwordMatchValidator: ValidatorFn = (abControl: AbstractControl): ValidationErrors | null => {
+  const control = abControl as FormGroup;
+  const password = control.get('password');
+  const confirm = control.get('confirm');
+  if ( password?.value === confirm?.value ) {
     return null;
-  else
-    return {passwordMismatch: true};
+  } else {
+    console.log('000000');
+    return { passwordMatched: false };
+  }
 };
 
 @Component({
@@ -17,11 +22,18 @@ export class PasswordInputComponent implements OnInit {
   hide = true;
 
   passwordFormControl = new FormGroup({
-    password: new FormControl('',Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'));
-    confirm: new FormControl()
+    password: new FormControl('', Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')),
+    confirm: new FormControl('')
+  }, {
+    validators: passwordMatchValidator
   });
 
-  confirmFormControl = new FormControl('', passwordMatchValidator(this.passwordFormControl));
+  get password(): FormControl {
+    return this.passwordFormControl.get('password') as FormControl;
+  }
+  get confirm(): FormControl {
+    return this.passwordFormControl.get('confirm') as FormControl;
+  }
 
   constructor() { }
 
