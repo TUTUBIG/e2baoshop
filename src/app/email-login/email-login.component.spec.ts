@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PasswordInputComponent } from './password-input.component';
+import { EmailLoginComponent } from './email-login.component';
 
-describe('PasswordInputComponent', () => {
-  let component: PasswordInputComponent;
-  let fixture: ComponentFixture<PasswordInputComponent>;
+describe('EmailLoginComponent', () => {
+  let component: EmailLoginComponent;
+  let fixture: ComponentFixture<EmailLoginComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PasswordInputComponent ]
+      declarations: [ EmailLoginComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PasswordInputComponent);
+    fixture = TestBed.createComponent(EmailLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
