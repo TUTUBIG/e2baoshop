@@ -11,11 +11,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {ReactiveFormsModule} from '@angular/forms';
 import { EmailLoginComponent } from './email-login/email-login.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmailLoginComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
