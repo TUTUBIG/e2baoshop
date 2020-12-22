@@ -1,42 +1,31 @@
 <ng-container>
-  <mat-toolbar>
-    <button mat-icon-button (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-
-    <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button>
-    <mat-menu #aboveMenu="matMenu" yPosition="above">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-
-    <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
-    <mat-menu #belowMenu="matMenu" yPosition="below">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-
-    <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button>
-    <mat-menu #beforeMenu="matMenu" xPosition="before">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-
-
-    <button mat-button [matMenuTriggerFor]="afterMenu">After</button>
-    <mat-menu #afterMenu="matMenu" xPosition="after">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-  </mat-toolbar>
-
-
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
        Sidenav
     </mat-sidenav>
     <mat-sidenav-content>
-      HELLO
+      <mat-toolbar>
+        <div fxHide.gt-xs>
+          <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div>
+          <a routerLink="#">ETURBO</a>
+        </div>
+        <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+          <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+              <a routerLink="#">
+                <mat-icon>search</mat-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </mat-toolbar>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </ng-container>
