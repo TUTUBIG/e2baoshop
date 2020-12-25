@@ -1,8 +1,6 @@
-<div>
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav role="navigation" mode="side" opened>
-      <div>
-        <svg class="shrine-logo-drawer" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" fill="#000000" focusable="false">
+<mat-sidenav-container>
+    <mat-sidenav class="shrine-sidenav" role="navigation" mode="side" opened>
+      <svg class="shrine-logo-drawer"  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" fill="#000000" focusable="false">
           <g>
           <g>
             <path d="M17,2H7L2,6.62L12,22L22,6.62L17,2z M16.5,3.58l3.16,2.92H16.5V3.58z M7.59,3.5H15v3H4.34L7.59,3.5z
@@ -11,52 +9,34 @@
           <rect fill="none" width="24" height="24"/>
         </g>
         </svg>
-        <h1 class="shrine-title">SHRINE</h1>
-      </div>
-      <div class="shrine-drawer">
-        <nav class="mdc-list">
-          <p>
-            <a class="mdc-list-item" aria-selected="true" tabindex="0" href="#">
-              <span class="mdc-list-item-text">Featured</span>
-            </a>
-          </p>
-          <p>
-            <a class="mdc-list-item" href="#">
-              <span class="mdc-list-item-text">Apartment</span>
-            </a>
-          </p>
-        </nav>
-      </div>
+      <h1 class="shrine-title">SHRINE</h1>
+      <mat-nav-list>
+          <a mat-list-item href="#">Featured</a>
+          <a mat-list-item href="#">Apartment</a>
+        </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <div>
-        <mat-grid-list cols="4">
-          <mat-grid-tile>
-            <img src="assets/weave-keyring.jpg" alt="resource not exist">
-            <span>Weave keyring</span>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <img src="assets/weave-keyring.jpg" alt="resource not exist">
-            <span>Weave keyring</span>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <img src="assets/weave-keyring.jpg" alt="resource not exist">
-            <span>Weave keyring</span>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <img src="assets/weave-keyring.jpg" alt="resource not exist">
-            <span>Weave keyring</span>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <img src="assets/weave-keyring.jpg" alt="resource not exist">
-            <span>Weave keyring</span>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <img src="assets/weave-keyring.jpg" alt="resource not exist">
-            <span>Weave keyring</span>
-          </mat-grid-tile>
+      <mat-grid-list cols="4" gutterSize="10px" class="mat-grid-list">
+        <mat-grid-tile>
+          <img src="assets/weave-keyring.jpg" alt="resource not exist">
+          <span>Weave keyring</span>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <img src="assets/weave-keyring.jpg" alt="resource not exist">
+          <mat-grid-tile-footer>Weave keyring</mat-grid-tile-footer>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <img src="assets/weave-keyring.jpg" alt="resource not exist">
+          <mat-grid-tile-footer>Weave keyring</mat-grid-tile-footer>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <img src="assets/weave-keyring.jpg" alt="resource not exist">
+          <mat-grid-tile-footer>Weave keyring</mat-grid-tile-footer>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <img src="assets/weave-keyring.jpg" alt="resource not exist">
+          <mat-grid-tile-footer>Weave keyring</mat-grid-tile-footer>
+        </mat-grid-tile>
         </mat-grid-list>
-      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
-</div>
